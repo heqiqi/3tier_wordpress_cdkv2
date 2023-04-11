@@ -1,14 +1,23 @@
-# Welcome to your CDK TypeScript project
+# Install Wordpress in a typical 3-Tier architecture on AWS Infra
 
-This is a blank project for CDK development with TypeScript.
+## Instroduce
+This is a project for setup the wordpress with 3 tier architecture CDKv2 typeScript.
+* Auto scaling group,providing elastic scaling capabilities.
+* Aurora Mysql Cluster for High Availability on persistence layer.
+* EFS share the media files and PHP session.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Architecture
+See [Architecture on AWS.
+](./images/3tier_web_hosting2.drawio.png)
+![Architecture](./images/3tier_web_hosting2.drawio.png)
 
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
+## Commands
+Use the following command to install：
+* Make sure you already installed Node.
+* `npm install -g aws-cdk`   install CDK
+* `npm install`   install depedency library
+* `cdk bootstrap`      initialize the CDK execution environment
+* `cdk synth`   emits the synthesized CloudFormation template
 * `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+
+
