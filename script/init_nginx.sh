@@ -31,7 +31,7 @@ sudo amazon-linux-extras enable php8.2 -y
 #sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap} -y
 sudo yum clean metadata
 sudo yum install php-cli php-pdo php-fpm php-json php-mysqlnd -y
-sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap} -y
+sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap,opcahce} -y
 sudo mkdir -pv /var/www/html/php
 
 sed -i "s/\/var\/lib\/php\/session/\/var\/www\/html\/php_sessions/"  /etc/php-fpm.d/www.conf
