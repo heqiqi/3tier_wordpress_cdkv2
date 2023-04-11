@@ -18,6 +18,8 @@ Use the following command to install：
 * `npm install`   install depedency library
 * `cdk bootstrap`      initialize the CDK execution environment
 * `cdk synth`   emits the synthesized CloudFormation template
+* `export CIDR='10.0.0.0/16'` VPC ip cidr configure
+* `export KEY_PAIR_NAME=saptest` EC2 Key pairs
 * `cdk deploy`      deploy this stack to your default AWS account/region
 
 
