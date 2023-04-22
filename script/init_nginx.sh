@@ -11,7 +11,7 @@ sudo yum install -y byobu
 sudo yum install -y amazon-efs-utils
 sudo yum install -y mysql
 EFS_ID=fs-xxxxxxxxxx
-echo "mount  efs id: ${EFS_ID}"
+echo "mount efs id: ${EFS_ID}"
 sudo mkdir -pv /var/www/html
 sudo mount -t efs -o tls ${EFS_ID}:/ /var/www/html
 echo "mount  efs end"
@@ -23,15 +23,14 @@ sudo systemctl enable httpd
 #sudo firewall-cmd --reload
 
 ###php 8.1 begin####
-#amazon-linux-extras enable  php8.1
-#yum install php-cli php-pdo php-fpm php-json php-mysqlnd -y
-###end####
-
-sudo amazon-linux-extras enable php8.2 -y
-#sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap} -y
+sudo amazon-linux-extras enable  php8.1 -y
+#sudo amazon-linux-extras enable  php8.2 -y
 sudo yum clean metadata
 sudo yum install php-cli php-pdo php-fpm php-json php-mysqlnd -y
-sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap,opcahce} -y
+sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,xml,fpm,intl,zip,opcahce} -y
+#sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath ,xml,fpm,intl,zip} -y
+###end####
+
 sudo mkdir -pv /var/www/html/php
 
 sed -i "s/\/var\/lib\/php\/session/\/var\/www\/html\/php_sessions/"  /etc/php-fpm.d/www.conf
